@@ -1,0 +1,25 @@
+{
+  "name": "lambol-data-centralization-container",
+  "image": "alpine:3.20.0",
+  "privileged": true,
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint", // ESLint support
+        "esbenp.prettier-vscode", // Prettier integration for code formatting
+        "ms-azuretools.vscode-docker", // Docker tools for VS Code
+        "mhutchie.git-graph", // Git graph visualization
+        "eamodio.gitlens", // Improve Git functionality in VS Code
+        "formulahendry.auto-rename-tag", // Automatically rename HTML tags
+        "coenraads.bracket-pair-colorizer-2", // Colorize bracket pairs
+        "ms-vscode.vscode-typescript-tslint-plugin", // TypeScript and TSLint support
+        "streetsidesoftware.code-spell-checker", // Spell checker
+        "visualstudioexptteam.vscodeintellicode" // Smart code suggestions
+      ]
+    }
+  },
+  "postCreateCommand": "echo 'Container setup complete!'"
+}

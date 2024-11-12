@@ -1,130 +1,42 @@
+Here’s a refined version of your README with corrections for consistency, organization, and clarity.
+
+---
+
 # 🏭 **LAMBOL - Mining Data Centralization System**
 
 ## 📋 **Overview**
 
-**LAMBOL** es un sistema integral de centralización de datos diseñado específicamente para operaciones mineras. Su objetivo es optimizar la gestión de registros de pesaje, análisis de laboratorio e información contable, integrando todos estos módulos en una plataforma unificada. Con una arquitectura modular, procesamiento de datos en tiempo real y capacidades avanzadas de análisis, **LAMBOL** es una solución poderosa para la minería moderna.
+**LAMBOL** is a comprehensive data centralization system designed specifically for mining operations. It aims to optimize the management of weighing records, laboratory analysis, and accounting information by integrating all these modules into a unified platform. With a modular architecture, real-time data processing, and advanced analysis capabilities, **LAMBOL** provides a powerful solution for modern mining operations.
 
 ---
 
-## 🏗️ **Project Architecture**
+**Table of Contents**:
 
-Este proyecto sigue una estructura de monorepo basada en **Screaming Architecture** y **Atomic Design** para la interfaz. Esto permite un desarrollo escalable y fácil de mantener.
-
-<details>
-<summary><strong>📂 Estructura del proyecto</strong></summary>
-
-```bash
-lambol/
-├── BACKEND/                       # Módulos principales del backend
-│   ├── AUTH/                      # Dominio de autenticación
-│   ├── WEIGHING/                  # Dominio de gestión de pesaje
-│   ├── LABORATORY/                # Dominio de análisis de laboratorio
-│   ├── ACCOUNTING/                # Dominio de contabilidad
-│   └── COMMON/                    # Utilidades compartidas
-│
-├── FRONTEND/                      # Aplicación del frontend
-│   ├── src/
-│   │   ├── atoms/                 # Atomic Design - Componentes básicos
-│   │   ├── molecules/             # Atomic Design - Componentes combinados
-│   │   ├── organisms/             # Atomic Design - Componentes complejos
-│   │   ├── templates/             # Atomic Design - Plantillas de página
-│   │   ├── pages/                 # Páginas completas
-│   │   └── features/              # Módulos por características
-│   └── public/
-│
-└── DATABASE/                      # Configuraciones y scripts de la base de datos
-    ├── migrations/
-    ├── seeds/
-    └── scripts/
-```
-
-</details>
+- [🏭 **LAMBOL - Mining Data Centralization System**](#-lambol---mining-data-centralization-system)
+  - [📋 **Overview**](#-overview)
+  - [📌 Prerequisites](#-prerequisites)
+  - [🔧 Installation](#-installation)
+  - [🏗️ Project Architecture](#️-project-architecture)
+  - [🚀 Features](#-features)
+  - [🛠️ Tech Stack \& Versions](#️-tech-stack--versions)
+  - [📦 Core Technologies](#-core-technologies)
+  - [🧪 Testing](#-testing)
+  - [🌐 API Documentation](#-api-documentation)
+  - [🔄 Database Migrations](#-database-migrations)
+  - [🔐 Environment Variables](#-environment-variables)
+  - [🔄 **CI/CD Pipeline**](#-cicd-pipeline)
+  - [🤝 Contributing](#-contributing)
+  - [📄 License](#-license)
 
 ---
 
-## 🚀 **Features**
+## 📌 Prerequisites
 
-- **Centralized Data Management**
-  - Integration of weighing records, laboratory analysis, and accounting information.
-  - Storage of historical data for trend analysis.
-- **Real-Time Processing**
-  - Automatic data validation and synchronization between modules.
-  - Live updates and notifications throughout the system.
-
-- **Analysis and Reporting**
-  - Generation of customized reports and interactive dashboards.
-  - Data export capabilities for further analysis.
-
----
-
-## 🛠️ **Tech Stack & Versions**
-
-## 📦 Core Technologies
-
-| Backend    | Frontend     | Database    |
-| ---------- | ------------ | ----------- |
-| Python 3.8 | React        | PostgreSQL  |
-| FastAPI    | Next.js      | Redis       |
-| SQLAlchemy | TypeScript   | TimescaleDB |
-| Pydantic   | Tailwind CSS |             |
-
----
-
-## 🧪 Development & Testing Tools
-
-| Tool            | Purpose                         |
-| --------------- | ------------------------------- |
-| Docker          | Containerization                |
-| Docker Compose  | Container orchestration         |
-| GitHub Actions  | CI/CD                           |
-| ESLint          | Frontend code quality           |
-| Prettier        | Frontend code formatting        |
-| Pylint          | Backend code quality            |
-| Black           | Backend code formatting         |
-| Pytest          | Backend testing                 |
-| Pytest-Cov      | Test coverage                   |
-| Pytest-Asyncio  | Asynchronous testing in Backend |
-| Jest            | Frontend testing                |
-| Testing Library | Frontend testing (React)        |
-| Cypress         | Frontend E2E testing            |
-| Storybook       | UI component testing            |
-
----
-
-## 🎨 UI Components & Design
-
-| Tool          | Purpose               |
-| ------------- | --------------------- |
-| shadcn/ui     | UI components         |
-| Tailwind CSS  | UI styling and design |
-| Framer Motion | Frontend animations   |
-| Lucide-React  | Frontend icons        |
-| Galileo AI    | UI/UX design          |
-| Eraser.io     | Diagram creation      |
-| Excalidraw    | Diagram creation      |
-| Mermaid       | Diagrams in markdown  |
-| dbdiagram.io  | Database design       |
-
----
-
-## 🔍 Monitoring & Security
-
-| Tool       | Purpose                     |
-| ---------- | --------------------------- |
-| Prometheus | Monitoring and metrics      |
-| Grafana    | Metrics visualization       |
-| OWASP ZAP  | Security (security testing) |
-| Snyk       | Dependency security         |
-| Dependabot | Dependency updates          |
-
-## 📋 **Prerequisites**
-
-Asegúrate de tener las siguientes versiones instaladas en tu entorno de desarrollo:
+Ensure the following versions are installed in your development environment:
 
 ```bash
 # Core
 Node.js >= 18.x
-Python >= 3.8
 PostgreSQL >= 14.x
 Redis >= 6.x
 
@@ -136,109 +48,204 @@ npm >= 9.x
 
 ---
 
-## 🔧 **Installation**
+## 🔧 Installation
 
-1. **Clonar el repositorio**:
+1. **Clone the repository**:
 
    ```bash
    git clone https://github.com/lambol-mining/data-centralization.git
    cd data-centralization
    ```
 
-2. **Instalar dependencias**:
+2. **Install dependencies**:
 
    ```bash
    yarn install
    ```
 
-3. **Configurar variables de entorno**:
+3. **Configure environment variables**:
 
    ```bash
    cp .env.example .env
    ```
 
-4. **Inicializar la base de datos**:
+4. **Initialize the database**:
 
    ```bash
    cd DATABASE
    npm run migrate
    ```
 
-5. **Iniciar los servidores de desarrollo**:
+5. **Start the development servers**:
 
    ```bash
-   # Iniciar backend
+   # Start backend
    cd BACKEND
    yarn run dev
 
-   # Iniciar frontend
+   # Start frontend
    cd FRONTEND
    yarn run dev
    ```
 
 ---
 
-## 🧪 **Testing**
+## 🏗️ Project Architecture
 
-Para ejecutar pruebas en el backend y frontend:
+This project follows a monorepo structure based on **Screaming Architecture** and **Atomic Design** principles, which allows for scalable and maintainable development.
+
+<details>
+<summary><strong>📂 Project Structure</strong></summary>
 
 ```bash
-# Ejecutar todas las pruebas
+lambol/
+├── BACKEND/                       # Main backend modules and configuration
+│   ├── domains/                   # Domain-specific logic (organized by feature/domain)
+│   │   ├── accounting/            # Accounting domain
+│   │   ├── auth/                  # Authentication domain
+│   │   ├── laboratory/            # Laboratory analysis domain
+│   │   └── weighing/              # Weighing management domain
+│   ├── common/                    # Shared modules (helpers, utils, middleware)
+│   │   ├── utils/                 # Utility functions and helpers
+│   │   └── middleware/            # Middleware functions
+│   ├── config/                    # Configuration files for the backend
+│   │   ├── settings.json          # General settings in JSON format
+│   │   └── settings.yaml          # General settings in YAML format (alternative)
+│   ├── scripts/                   # Automation and deployment scripts
+│   ├── tests/                     # Tests for backend modules
+│   │   ├── test_accounting/       # Tests for accounting domain
+│   │   ├── test_auth/             # Tests for authentication domain
+│   │   ├── test_laboratory/       # Tests for laboratory domain
+│   │   └── test_weighing/         # Tests for weighing domain
+│   └── api/                       # API definitions and endpoints
+│       ├── routes/                # API route definitions
+│       ├── controllers/           # Request handlers and business logic
+│       └── schemas/               # Data validation schemas
+│
+├── DATABASE/                      # Database configuration and management
+│   ├── migrations/                # Database migration files
+│   ├── seeds/                     # Initial data seeding files
+│   └── scripts/                   # Database management scripts
+│       ├── init_db.sh             # Script to initialize the database
+│       └── backup_db.sh           # Script to backup the database
+│
+├── FRONTEND/                      # Frontend application
+│   ├── public/                    # Public assets (index.html, favicon, etc.)
+│   └── src/                       # Frontend source code
+│       ├── ui/                    # UI components and Atomic Design structure
+│       │   ├── components/        # All components following Atomic Design
+│       │   │   ├── atoms/         # Basic elements (e.g., buttons, inputs)
+│       │   │   ├── molecules/     # Combined elements (e.g., form groups)
+│       │   │   ├── organisms/     # Complex elements (e.g., navigation bars)
+│       │   │   └── templates/     # Page templates (e.g., main layout)
+│       │   └── pages/             # Complete pages (e.g., HomePage, Dashboard)
+│       ├── assets/                # Static assets like images, fonts, etc.
+│       ├── config/                # Frontend configuration files
+│       ├── styles/                # Global and component-level styles
+│       ├── utils/                 # Helper functions and utilities for the frontend
+│       └── tests/                 # Tests for frontend components and pages
+│           ├── unit/              # Unit tests for individual components
+│           └── integration/       # Integration tests for complete pages
+│
+├── .devcontainer/                 # Containerized development environment configuration
+│   ├── devcontainer.json          # Dev container configuration for VS Code
+│   └── Dockerfile                 # Dockerfile for dev container setup
+│
+├── .github/                       # GitHub-specific files (e.g., workflows)
+│   └── workflows/                 # CI/CD workflow files for GitHub Actions
+├── docs/                          # Project documentation (user guides, API docs, etc.)
+├── scripts/                       # Project-wide automation scripts
+│   ├── setup.sh                   # Initial setup script
+│   ├── deploy.sh                  # Deployment script
+│   └── lint.sh                    # Linting and formatting script
+├── static/                        # Static files shared across the project (e.g., logos)
+├── configs/                       # General configuration files for the project
+├── docker-compose.yml             # Docker Compose file for multi-container setup
+├── Dockerfile                     # Dockerfile for containerizing the application
+├── .env.example                   # Example environment variables file
+├── README.md                      # Project overview and setup instructions
+├── CHANGELOG.md                   # Log of changes and version history
+└── LICENSE                        # License specifying the terms of use
+```
+
+</details>
+
+---
+
+## 🚀 Features
+
+- **Centralized Data Management**: Integration of weighing records, laboratory analysis, and accounting information.
+- **Real-Time Processing**: Automatic data validation and synchronization across modules.
+- **Analysis and Reporting**: Generate customized reports and interactive dashboards.
+
+---
+
+## 🛠️ Tech Stack & Versions
+
+## 📦 Core Technologies
+
+| **Backend** | **Frontend** | **Database** | **Infrastructure/DevOps** | **Testing & Documentation** |
+| ----------- | ------------ | ------------ | ------------------------- | --------------------------- |
+| Nest.js     | React        | PostgreSQL   | Docker                    | Jest                        |
+| GraphQL     | Next.js      | Redis        | Docker Compose            | Storybook                   |
+|             | Tailwind CSS |              |                           | ESLint                      |
+
+---
+
+## 🧪 Testing
+
+Run tests for backend and frontend:
+
+```bash
+# Run all tests
 npm run test
 
-# Pruebas del backend
+# Backend tests
 cd BACKEND
-poetry run pytest
+yarn run test
 
-# Pruebas del frontend
+# Frontend tests
 cd FRONTEND
-npm run test         # Pruebas unitarias
-npm run test:e2e     # Pruebas E2E
-npm run storybook    # Testing de componentes
+npm run test         # Unit tests
+npm run test:e2e     # End-to-End tests
+npm run storybook    # Storybook testing
 ```
 
 ---
 
-## 🌐 **API Documentation**
+## 🌐 API Documentation
 
-La documentación de la API (OpenAPI/Swagger) está disponible en:
+API documentation (OpenAPI/Swagger) is available at:
 
-- **Desarrollo**: `http://localhost:3000/api/docs`
+- **Development**: `http://localhost:3000/api/docs`
 - **Staging**: `https://staging.lambol.com/api/docs`
-
-Incluye endpoints para:
-
-- **Autenticación**
-- **Gestión de pesaje**
-- **Datos de laboratorio**
-- **Integración contable**
 
 ---
 
-## 🔄 **Database Migrations**
+## 🔄 Database Migrations
 
-Comandos para gestionar migraciones de la base de datos:
+Manage database migrations:
 
 ```bash
-# Crear una nueva migración
+# Create a new migration
 cd DATABASE
 npm run migration:create
 
-# Ejecutar migraciones
+# Run migrations
 npm run migration:up
 
-# Revertir migraciones
+# Revert migrations
 npm run migration:down
 ```
 
 ---
 
-## 🔐 **Environment Variables**
+## 🔐 Environment Variables
 
-Variables de entorno clave requeridas para la configuración:
+Important environment variables:
 
 ```env
-# Base de Datos
+# Database
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=lambol_db
@@ -248,10 +255,9 @@ DB_PASSWORD=your_password
 # Backend
 PORT=3000
 NODE_ENV=development
-JWT_SECRET=your_jwt_secret
 
 # Frontend
-VITE_API_URL=http://localhost:3000
+VITE_API_BASE_URL=http://localhost:3000
 ```
 
 ---
@@ -268,46 +274,14 @@ graph LR
 
 ---
 
-## 🎨 **Design & Documentation Tools**
+## 🤝 Contributing
 
-- **UI/UX Design**: Galileo AI
-- **Creación de Diagramas**: Eraser.io, Excalidraw, Mermaid
-- **Diseño de Bases de Datos**: dbdiagram.io
-- **Desarrollo Asistido por AI**: GitHub Copilot, Vercel AI, Coditia AI
+We welcome contributions! Please read our [Contribution Guide](docs/contributing.md) for guidelines on submitting pull requests.
 
 ---
 
-## 🤝 **Contributing**
+## 📄 License
 
-1. **Fork del repositorio**
-2. **Crear una rama de la nueva funcionalidad** (`git checkout -b feature/AmazingFeature`)
-3. **Commit de los cambios** (`git commit -m 'Add some AmazingFeature'`)
-4. **Push de la rama** (`git push origin feature/AmazingFeature`)
-5. **Abrir un Pull Request**
-
----
-
-## 👥 **Team**
-
-- **Backend Lead**: [Nombre]
-- **Frontend Lead**: [Nombre]
-- **Database Architect**: [Nombre]
-- **Project Manager**: [Nombre]
-
----
-
-## 📄 **License**
-
-Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
-
----
-
-## 📞 **Support**
-
-Para soporte, contacta:
-
-- **Soporte Técnico**: <joigfema@lambol.com>
-- **Documentación**: [docs.lambol.com](https://docs.lambol.com)
-- **Issue Tracker**: GitHub Issues
+**LAMBOL** is open-sourced software licensed under the **MIT license**. See the [LICENSE](LICENSE) file for more information.
 
 ---
