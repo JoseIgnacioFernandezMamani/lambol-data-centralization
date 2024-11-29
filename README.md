@@ -1,7 +1,3 @@
-Here’s a refined version of your README with corrections for consistency, organization, and clarity.
-
----
-
 # 🏭 **LAMBOL - Mining Data Centralization System**
 
 ## 📋 **Overview**

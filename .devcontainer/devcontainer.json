@@ -1,25 +1,45 @@
 {
   "name": "lambol-data-centralization-container",
-  "image": "alpine:3.20.0",
+  "dockerComposeFile": ["docker-compose.yml"],
   "privileged": true,
+  "workspaceFolder": "/usr/src/app",
   "customizations": {
     "vscode": {
       "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash"
+        "files.eol": "\n",
+        "git.path": "/usr/bin/git",
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "typescript.tsdk": "node_modules/typescript/lib",
+        "typescript.enablePromptUseWorkspaceTsdk": true,
+        "eslint.validate": [
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact"
+        ]
       },
       "extensions": [
-        "dbaeumer.vscode-eslint", // ESLint support
-        "esbenp.prettier-vscode", // Prettier integration for code formatting
-        "ms-azuretools.vscode-docker", // Docker tools for VS Code
-        "mhutchie.git-graph", // Git graph visualization
-        "eamodio.gitlens", // Improve Git functionality in VS Code
-        "formulahendry.auto-rename-tag", // Automatically rename HTML tags
-        "coenraads.bracket-pair-colorizer-2", // Colorize bracket pairs
-        "ms-vscode.vscode-typescript-tslint-plugin", // TypeScript and TSLint support
-        "streetsidesoftware.code-spell-checker", // Spell checker
-        "visualstudioexptteam.vscodeintellicode" // Smart code suggestions
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "formulahendry.auto-rename-tag",
+        "coenraads.bracket-pair-colorizer-2",
+        "ms-vscode.vscode-typescript-tslint-plugin",
+        "streetsidesoftware.code-spell-checker",
+        "visualstudioexptteam.vscodeintellicode",
+        "ms-azuretools.vscode-docker",
+        "prisma.prisma",
+        "bradlc.vscode-tailwindcss"
       ]
     }
   },
-  "postCreateCommand": "echo 'Container setup complete!'"
+  "postCreateCommand": "yarn install && yarn db:migrate && echo 'Container setup complete!'",
+  "portsAttributes": {
+    "3000": { "label": "Backend (Nest.js)" },
+    "3001": { "label": "Frontend (React)" },
+    "5432": { "label": "PostgreSQL" }
+  }
 }
